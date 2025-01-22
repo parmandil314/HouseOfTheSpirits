@@ -1,8 +1,10 @@
-from house import House
+from src.term import clear
 
 
 def get_command():
     raw_command = input("> ")
+
+    clear()
 
     finished_command = Command()
     finished_command.args = []
@@ -55,8 +57,13 @@ class Command:
         self.keyword = keyword
         self.args = args
 
-    def execute(self, house: House):
+    def execute(self, house):
         if self.keyword == "go":
-            house.player.current_room = house.rooms[self.args[0]]
+            if int(self.args[0]) <= len(house.player.current_room.adjoining_rooms):
+                house.player.current_room = house.rooms[house.player.current_room.adjoining_rooms[int(self.args[0]) - 1]]
+            else:
+                print(f"You can't get to that room directly from {house.player.current_room.name}")
         elif self.keyword == "talk":
             house.player.talk(self.args[0])
+        else:
+            print("Command not understood.")
