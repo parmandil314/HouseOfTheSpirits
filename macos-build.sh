@@ -1,0 +1,1 @@
+pyinstaller src/main.py --onefile --specpath spec -n spirithouse-macos.app

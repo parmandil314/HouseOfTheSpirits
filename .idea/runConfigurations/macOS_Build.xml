@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="macOS Build" type="ShConfigurationType">
-    <option name="SCRIPT_TEXT" value="pyinstaller src/main.py --onefile --specpath spec -n spirithouse-macos.app" />
+    <option name="SCRIPT_TEXT" value="sh pyinstaller src/main.py --onefile --specpath spec -n spirithouse-macos.app" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="$PROJECT_DIR$/macos-build.sh" />
     <option name="SCRIPT_OPTIONS" value="--macos" />
